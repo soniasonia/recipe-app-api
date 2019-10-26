@@ -20,11 +20,13 @@ class AdminSiteTests(TestCase):
 
     def test_users_listed(self):
         """Test that users are listed on user page"""
-        url = reverse('admin:core_user_changelist')  # We don't use hardcoded url because it may change
+        url = reverse('admin:core_user_changelist')
+        # We don't use hardcoded url because it may change
         res = self.client.get(url)
 
         self.assertContains(res, self.user.name)
-        #  Django custom assertion if that contains the item and if HTTP response is 200
+        #  Django custom assertion if that contains the item
+        #  and if HTTP response is 200
         self.assertContains(res, self.user.email)
 
     def test_user_change_page(self):
