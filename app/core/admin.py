@@ -24,5 +24,6 @@ class UserAdmin(BaseUserAdmin):
 
 
 admin.site.register(models.User, UserAdmin)
+admin.site.register(models.Tag)
 # By registering model with admin.site.register,
 # Django was able to construct a default form representation
